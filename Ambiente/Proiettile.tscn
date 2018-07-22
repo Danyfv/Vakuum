@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Ambiente/Cervello_Proiettile.gd" type="Script" id=1]
+[ext_resource path="res://Ambiente/Immagini/Proiettile.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 33.9884
+
+[node name="Bullet" type="Area2D"]
+
+position = Vector2( 285.087, 103.911 )
+input_pickable = false
+gravity_point = true
+gravity_vec = Vector2( 0, 1 )
+gravity = -10.0
+linear_damp = -1.0
+angular_damp = -1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 73.8402, 1.69749 )
+scale = Vector2( 0.306625, 0.210162 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -8.94694, 14.9573 )
+scale = Vector2( 0.384867, 1.45942 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+
+

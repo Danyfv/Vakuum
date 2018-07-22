@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Ambiente/Scena_MuroInvisibile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ambiente/Immagini/Immagine.png" type="Texture" id=2]
+[ext_resource path="res://Protagonista/Scena_Protagonista.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.0395, 29.001 )
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="RightWall" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( -21.417, 6000 )
+
+[node name="LeftWall" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 741.582, 5999.06 )
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 323.289, 12979.9 )
+scale = Vector2( 35.5302, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Area2D" index="1"]
+
+position = Vector2( 1.05483, -6.98145 )
+scale = Vector2( 0.0362614, 0.301991 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="KinematicBody2D" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 360, 100 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+
+[node name="CanvasLayer2" parent="KinematicBody2D" index="4" instance=ExtResource( 4 )]
+
+[node name="Node" parent="KinematicBody2D" index="5" instance=ExtResource( 5 )]
+
+[connection signal="area_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+
+
