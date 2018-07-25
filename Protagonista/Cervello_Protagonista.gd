@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (PackedScene) var Cervello_Proiettile
 
-var GRAVITY = 1000
+var gravity = 1000
 
 var velocity = Vector2()
 var speed = 600
@@ -14,7 +14,7 @@ func _physics_process(delta):
 	if not alive:
 		print("Game over")
 		
-	var force = Vector2(0, GRAVITY)
+	var force = Vector2(0, gravity)
 		
 	if alive:
 		control(delta)
@@ -23,15 +23,15 @@ func _physics_process(delta):
 
 func control(delta):
 
-	if get_node("CanvasLayer/Right").is_pressed() or Input.is_action_pressed("ui_right"):
-		velocity = Vector2(speed, GRAVITY - 100)
+	if (get_node("CanvasLayer/Right").is_pressed() or Input.is_action_pressed("ui_right")) and position.x < 700:
+		velocity = Vector2(speed, gravity)
 		
-	elif get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left"):
-		velocity = Vector2(-speed, GRAVITY - 100)
+	elif (get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left")) and position.x > -100:
+		velocity = Vector2(-speed, gravity)
 
 	
 	else:
-		velocity = Vector2(0, GRAVITY)
+		velocity = Vector2(0, gravity)
 	
 
 
@@ -51,7 +51,7 @@ func _on_Area2D_body_entered(body):
 	if body.get_name() == "KinematicBody2D":
 		alive = false
 		get_node("CanvasLayer2/Popup").show()
-		GRAVITY = 0
+		gravity = 0
 		
 func _on_TextureButton_button_down():
 	get_tree().change_scene("Menu/Scena_menu.tscn")

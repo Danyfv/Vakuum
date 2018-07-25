@@ -11,7 +11,7 @@ extents = Vector2( 31.1403, 31.0903 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
-position = Vector2( 361.697, 154.339 )
+position = Vector2( 360.697, 154.339 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

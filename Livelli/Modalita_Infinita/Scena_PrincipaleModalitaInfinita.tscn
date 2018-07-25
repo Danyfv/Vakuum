@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Livelli/Modalita_Infinita/Scena_SpawnerNemici.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Protagonista/Scena_Protagonista.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=3]
+
+[node name="ScenaPrincipale" type="Node2D"]
+
+[node name="Spawner_enemy" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( -0.108643, -2.78903 )
+
+[node name="KinematicBody2D" parent="Spawner_enemy" index="2" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 359.027, 237.848 )
+
+[node name="Node" parent="Spawner_enemy/KinematicBody2D" index="4" instance=ExtResource( 3 )]
+
+

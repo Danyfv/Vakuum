@@ -4,7 +4,7 @@
 [ext_resource path="res://Ambiente/Proiettile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ambiente/Nuvola.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 [node name="Node2D" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -31,7 +31,7 @@ Cervello_Protagonista = null
 
 [node name="RigidBody2D17" parent="Bullets" index="3" instance=ExtResource( 2 )]
 
-position = Vector2( -51.7869, 7885.16 )
+position = Vector2( 268.277, 7885.16 )
 Cervello_Protagonista = null
 
 [node name="RigidBody2D2" parent="Bullets" index="4" instance=ExtResource( 2 )]
