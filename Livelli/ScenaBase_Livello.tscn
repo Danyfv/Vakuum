@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Ambiente/Immagini/Immagine.png" type="Texture" id=1]
 [ext_resource path="res://Protagonista/Scena_Protagonista.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 26.0395, 29.001 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -43,12 +43,13 @@ __meta__ = {
 
 [node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 274.279, 160.907 )
+editor/display_folded = true
+position = Vector2( 295.303, 387.963 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="CanvasLayer2" parent="KinematicBody2D" index="4" instance=ExtResource( 3 )]
+[node name="Node" parent="KinematicBody2D" index="4" instance=ExtResource( 3 )]
 
-[node name="Node" parent="KinematicBody2D" index="5" instance=ExtResource( 4 )]
+[node name="CanvasLayer2" parent="KinematicBody2D" index="5" instance=ExtResource( 4 )]
 
 [connection signal="area_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
 

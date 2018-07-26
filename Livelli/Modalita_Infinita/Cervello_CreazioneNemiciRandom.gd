@@ -4,7 +4,7 @@ extends Node2D
 var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
 var cloud_enemy = preload("res://Ambiente/Nuvola.tscn")
 
-onready var gamer = get_node("KinematicBody2D")
+onready var  player = get_node("KinematicBody2D")
 var score = 0
 
 func _ready():
@@ -17,22 +17,22 @@ func _bulletSpawn():
 		var cloud_or_bullet = rand_range(0, 10)
 		var enemy
 		
-		if gamer.alive == false:
+		if player.alive == false:
 			break
 			
-		gamer.gravity += 5
+		player.gravity += 5
 		 
 		randomize()
 		#Creo un istanza del proiettile e un vettore con la posizione
-		if cloud_or_bullet > 8:
+		if cloud_or_bullet < 2:
 			enemy = cloud_enemy.instance()
 			
 		else:
 			enemy = bullet_enemy.instance()
 		
 		var pos = Vector2()
-		pos.x = rand_range(0, 720)
-		pos.y = gamer.position.y + 2000
+		pos.x = rand_range(-10, 730)
+		pos.y = player.position.y + 2000
 		#setto la posizione del proiettile
 		enemy.position = pos
 
@@ -43,7 +43,7 @@ func _bulletSpawn():
 		
 		#da il tempo di creazione dei proiettili
 		var pauseTime = Timer.new()
-		pauseTime.set_wait_time(0.4)
+		pauseTime.set_wait_time(0.35)
 		self.add_child(pauseTime)
 		pauseTime.start()
 		yield(pauseTime, "timeout")

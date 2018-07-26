@@ -13,7 +13,7 @@ config_version=3
 config/name="Vacuum"
 run/main_scene="res://Menu/Scena_menu.tscn"
 boot_splash/image="res://splash.png"
-config/icon="res://Ambiente/Immagini/Nuvole.png"
+config/icon="res://Protagonista/Immagini/GattoneVerde.png"
 
 [display]
 
