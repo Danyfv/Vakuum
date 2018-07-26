@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Menu/Cervello_menu.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Ambiente/Immagini/Nuvole.png" type="Texture" id=3]
-[ext_resource path="res://Menu/Immagini/BottoneStart.png" type="Texture" id=4]
-[ext_resource path="res://Menu/Immagini/BottoneExit.png" type="Texture" id=5]
+[ext_resource path="res://logo.png" type="Texture" id=2]
+[ext_resource path="res://Protagonista/Immagini/GattoneVerde.png" type="Texture" id=3]
+[ext_resource path="res://Ambiente/Immagini/Nuvole.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Immagini/BottoneStart.png" type="Texture" id=5]
+[ext_resource path="res://Menu/Immagini/BottoneExit.png" type="Texture" id=6]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -15,31 +16,38 @@ __meta__ = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Sprite3" type="Sprite" parent="CanvasLayer" index="0"]
+[node name="Logo" type="Sprite" parent="CanvasLayer" index="0"]
 
-position = Vector2( 243.71, 953.242 )
-scale = Vector2( 3.18917, 2.82122 )
+position = Vector2( 564.849, 127.395 )
+scale = Vector2( 0.300484, 0.300484 )
 texture = ExtResource( 2 )
 
-[node name="Sprite2" type="Sprite" parent="CanvasLayer" index="1"]
+[node name="Gattone" type="Sprite" parent="CanvasLayer" index="1"]
 
-position = Vector2( 521.362, 1070.82 )
-scale = Vector2( 0.280655, 0.216308 )
+position = Vector2( 186.695, 1051.44 )
+scale = Vector2( 0.300484, 0.300484 )
 texture = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer" index="2"]
+[node name="Cloud1" type="Sprite" parent="CanvasLayer" index="2"]
 
-position = Vector2( 150.653, 163.099 )
-scale = Vector2( 0.293039, 0.240903 )
-texture = ExtResource( 3 )
+position = Vector2( 433.618, 1151.86 )
+scale = Vector2( 0.300484, 0.300484 )
+texture = ExtResource( 4 )
 
-[node name="Start" type="TextureButton" parent="CanvasLayer" index="3"]
+[node name="Cloud2" type="Sprite" parent="CanvasLayer" index="3"]
+
+position = Vector2( 159.486, 99.5872 )
+scale = Vector2( -0.251223, 0.231223 )
+texture = ExtResource( 4 )
+
+[node name="Start" type="TextureButton" parent="CanvasLayer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -60,10 +68,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Exit" type="TextureButton" parent="CanvasLayer" index="4"]
+[node name="Exit" type="TextureButton" parent="CanvasLayer" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -84,10 +92,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="InfiniteMode" type="TextureButton" parent="CanvasLayer" index="5"]
+[node name="InfiniteMode" type="TextureButton" parent="CanvasLayer" index="6"]
 
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
@@ -95,10 +103,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 91.0
-margin_top = 666.0
-margin_right = 398.0
-margin_bottom = 818.0
+margin_left = 108.0
+margin_top = 663.0
+margin_right = 415.0
+margin_bottom = 815.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -110,7 +118,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Textures", "Visibility" ]
 
 [connection signal="button_down" from="CanvasLayer/Start" to="." method="_on_Start_button_down"]

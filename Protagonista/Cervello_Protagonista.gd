@@ -2,10 +2,10 @@ extends KinematicBody2D
 
 export (PackedScene) var Cervello_Proiettile
 
-var gravity = 1000
+var gravity = 900
 
 var velocity = Vector2()
-var speed = 600
+var speed = 800
 var alive = true
 
 

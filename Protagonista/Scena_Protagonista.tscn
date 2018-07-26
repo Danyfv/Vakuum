@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Protagonista/Cervello_Protagonista.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Protagonista/Immagini/GattoneVerde.png" type="Texture" id=2]
 [ext_resource path="res://Protagonista/Immagini/BottoneExit.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -9,9 +9,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 31.1403, 31.0903 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
-position = Vector2( 360.697, 154.339 )
+position = Vector2( 360.697, 156.857 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -22,6 +22,8 @@ Cervello_Proiettile = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( -3.25204, 3.11639 )
+scale = Vector2( 0.144524, 0.144524 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -66,7 +68,6 @@ __meta__ = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -75,14 +76,14 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Right" type="Button" parent="CanvasLayer" index="0"]
 
-modulate = Color( 0, 0, 0, 0.196078 )
-self_modulate = Color( 1, 0, 0, 0.196078 )
+modulate = Color( 0, 0, 0, 0 )
+self_modulate = Color( 1, 0, 0, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 360.0
-margin_top = 500.0
+margin_top = 400.0
 margin_right = 720.0
 margin_bottom = 1280.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -98,20 +99,20 @@ shortcut = null
 group = null
 flat = false
 align = 1
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Left" type="Button" parent="CanvasLayer" index="1"]
 
-modulate = Color( 0, 0, 0, 0.196078 )
-self_modulate = Color( 1, 0, 0, 0.196078 )
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 0, 0, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 500.0
+margin_top = 400.0
 margin_right = 360.0
 margin_bottom = 1280.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -127,7 +128,6 @@ shortcut = null
 group = null
 flat = false
 align = 1
-_sections_unfolded = [ "Margin", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -155,7 +155,6 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 3 )
-_sections_unfolded = [ "Rect", "Textures" ]
 __meta__ = {
 "_edit_lock_": true
 }
