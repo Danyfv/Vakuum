@@ -26,7 +26,7 @@ func control(delta):
 	if (get_node("CanvasLayer/Right").is_pressed() or Input.is_action_pressed("ui_right")) and position.x < 700:
 		velocity = Vector2(speed, gravity)
 		
-	elif (get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left")) and position.x > -20:
+	elif (get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left")) and position.x > 20:
 		velocity = Vector2(-speed, gravity)
 
 	
