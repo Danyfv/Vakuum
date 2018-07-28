@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Ambiente/Cervello_Proiettile.gd" type="Script" id=1]
-[ext_resource path="res://Ambiente/Immagini/Proiettile.png" type="Texture" id=2]
+[ext_resource path="res://Ambiente/Immagini/Zampa.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 33.9884
+radius = 9.22877
+height = 20.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" index="0"]
 
 position = Vector2( 285.087, 103.911 )
 input_pickable = false
@@ -20,11 +21,12 @@ angular_damp = -1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+Cervello_Protagonista = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 73.8402, 1.69749 )
-scale = Vector2( 0.306625, 0.210162 )
+position = Vector2( -6.23862, 17.1727 )
+scale = Vector2( 0.184264, 0.188186 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -32,8 +34,8 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -8.94694, 14.9573 )
-scale = Vector2( 0.384867, 1.45942 )
+position = Vector2( -5.51456, 20.0329 )
+scale = Vector2( 2.86363, 1.88328 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true

@@ -1,7 +1,7 @@
 extends Node2D
 
 var savegame = File.new() #file
-var save_path = "res://Salvataggi/InfiniteMode.save" #place of the file
+var save_path = "user://Salvataggio_InfiniteMode.save" #place of the file
 var save_data = {"highscore": 0} #variable to store data
 
 onready var Spawner_enemy = get_node("Spawner_enemy")
@@ -18,7 +18,7 @@ func _process(delta):
 			print("Nuovo record!!!!!!!!!!!!!!")
 	
 	
-	get_node("CanvasLayer/Popup/BestScore").set_text(str(read_savegame()))
+	#get_node("CanvasLayer/Popup/BestScore").set_text(str(read_savegame()))
 	
 func save(score):    
    save_data["highscore"] = score #data to save
