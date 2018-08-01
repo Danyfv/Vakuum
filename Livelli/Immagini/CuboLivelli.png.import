@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BloccoLivello3.png-16bd1ae83f1aff2d6063997293f0fbd1.stex"
+path="res://.import/CuboLivelli.png-263ce81ea9dea7f868cfb392352c8d4e.stex"
 
 [deps]
 
-source_file="res://Livelli/Immagini/BloccoLivello3.png"
-source_md5="968fa6e315ccbb43be75fc8c43d0beda"
-
-dest_files=[ "res://.import/BloccoLivello3.png-16bd1ae83f1aff2d6063997293f0fbd1.stex" ]
-dest_md5="700446948985abbddc1eb2bf997eff0f"
+source_file="res://Livelli/Immagini/CuboLivelli.png"
+dest_files=[ "res://.import/CuboLivelli.png-263ce81ea9dea7f868cfb392352c8d4e.stex" ]
 
 [params]
 

@@ -6,7 +6,7 @@ func _on_Exit_button_down():
 
 
 func _on_Start_button_down():
-	get_tree().change_scene("Livelli/Scena_Livelli.tscn")
+	get_tree().change_scene("Livelli/BloccoLivello/CervelloGriglia.tscn")
 
 
 func _on_InfiniteMode_button_down():

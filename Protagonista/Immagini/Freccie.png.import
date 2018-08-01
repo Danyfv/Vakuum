@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BloccoLivello1.png-62acb19fdda0dc0cba39b3622dd7e826.stex"
+path="res://.import/Freccie.png-1eecbf8b637395bed5eff9e4257a9665.stex"
 
 [deps]
 
-source_file="res://Livelli/Immagini/BloccoLivello1.png"
-source_md5="95eb46dfed54aafd989558e38eefd661"
-
-dest_files=[ "res://.import/BloccoLivello1.png-62acb19fdda0dc0cba39b3622dd7e826.stex" ]
-dest_md5="688a465eb6f890d0000cbf571c5e8235"
+source_file="res://Protagonista/Immagini/Freccie.png"
+dest_files=[ "res://.import/Freccie.png-1eecbf8b637395bed5eff9e4257a9665.stex" ]
 
 [params]
 

@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BloccoLivello2.png-c371d3bf81befb2417f52701e48d1959.stex"
+path="res://.import/NuvolaBella.png-a900e0fde1407c614b9e30d19382e52d.stex"
 
 [deps]
 
-source_file="res://Livelli/Immagini/BloccoLivello2.png"
-source_md5="f2380ec95d2465c2a53511776e25274e"
-
-dest_files=[ "res://.import/BloccoLivello2.png-c371d3bf81befb2417f52701e48d1959.stex" ]
-dest_md5="6bb7b54b4f753fbea364e0990cc46fb7"
+source_file="res://Ambiente/Immagini/NuvolaBella.png"
+dest_files=[ "res://.import/NuvolaBella.png-a900e0fde1407c614b9e30d19382e52d.stex" ]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Ambiente/Immagini/Nuvole.png" type="Texture" id=1]
+[ext_resource path="res://Ambiente/Immagini/NuvolaBella.png" type="Texture" id=1]
 
-[node name="Nuvola" type="Sprite"]
+[node name="Nuvola" type="Sprite" index="0"]
 
-position = Vector2( 211.232, 102.032 )
-scale = Vector2( 0.219667, 0.184827 )
+position = Vector2( 279.068, 159.109 )
+scale = Vector2( 0.445786, 0.375083 )
 texture = ExtResource( 1 )
 
 

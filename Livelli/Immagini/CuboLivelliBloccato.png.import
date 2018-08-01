@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MenuWords.png-f3131adcbe659a518f9a91c68845de9a.stex"
+path="res://.import/CuboLivelliBloccato.png-65e4de4a20528ed5092690f6f5a80583.stex"
 
 [deps]
 
-source_file="res://Menu/Immagini/MenuWords.png"
-source_md5="cc03efdfcbfb6ef01b8b86fc2d0921f4"
-
-dest_files=[ "res://.import/MenuWords.png-f3131adcbe659a518f9a91c68845de9a.stex" ]
-dest_md5="0f7e0b4aa982b9edc1c06080e6a422f9"
+source_file="res://Livelli/Immagini/CuboLivelliBloccato.png"
+dest_files=[ "res://.import/CuboLivelliBloccato.png-65e4de4a20528ed5092690f6f5a80583.stex" ]
 
 [params]
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://Ambiente/Proiettile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ambiente/Nuvola.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Node2D" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -17,87 +17,70 @@ editor/display_folded = true
 [node name="RigidBody2D13" parent="Bullets" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 443.147, 14839.9 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D" parent="Bullets" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 412.431, 10590.7 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D12" parent="Bullets" index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 555.147, 13855.1 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D17" parent="Bullets" index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 268.277, 7885.16 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D2" parent="Bullets" index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 244.625, 11005.5 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D16" parent="Bullets" index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 540.953, 8709.86 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D6" parent="Bullets" index="6" instance=ExtResource( 2 )]
 
 position = Vector2( 180.372, 12743 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D3" parent="Bullets" index="7" instance=ExtResource( 2 )]
 
 position = Vector2( 357.456, 9514.66 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D4" parent="Bullets" index="8" instance=ExtResource( 2 )]
 
 position = Vector2( 90.962, 11630.9 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D11" parent="Bullets" index="9" instance=ExtResource( 2 )]
 
 position = Vector2( 459.795, 9469.26 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D14" parent="Bullets" index="10" instance=ExtResource( 2 )]
 
 position = Vector2( 361.01, 10061.9 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D5" parent="Bullets" index="11" instance=ExtResource( 2 )]
 
 position = Vector2( 551.581, 4374.31 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D7" parent="Bullets" index="12" instance=ExtResource( 2 )]
 
 position = Vector2( 592.474, 12259.8 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D10" parent="Bullets" index="13" instance=ExtResource( 2 )]
 
 position = Vector2( 651.099, 7328.86 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D8" parent="Bullets" index="14" instance=ExtResource( 2 )]
 
 position = Vector2( 357.719, 11315.9 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D9" parent="Bullets" index="15" instance=ExtResource( 2 )]
 
 position = Vector2( 126.657, 7577.36 )
-Cervello_Protagonista = null
 
 [node name="RigidBody2D15" parent="Bullets" index="16" instance=ExtResource( 2 )]
 
 position = Vector2( 137.347, 9209.96 )
-Cervello_Protagonista = null
 
 [node name="Clouds" type="Node2D" parent="." index="2"]
 
