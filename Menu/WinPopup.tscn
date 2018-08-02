@@ -40,10 +40,12 @@ texture = ExtResource( 2 )
 
 [node name="LevelComplete" type="Sprite" parent="Popup" index="1"]
 
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 281.052, 121.785 )
 scale = Vector2( 0.773104, 0.753098 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -54,11 +56,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 177.0
-margin_top = 294.0
-margin_right = 668.0
-margin_bottom = 518.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 119.0
+margin_top = 307.0
+margin_right = 419.0
+margin_bottom = 407.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -71,8 +72,6 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
-stretch_mode = 1
-_sections_unfolded = [ "Rect", "Textures" ]
 
 [connection signal="button_down" from="Popup/TextureButton" to="." method="_on_TextureButton_button_down"]
 

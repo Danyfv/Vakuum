@@ -1,20 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Livelli/Cervello_Livello2.gd" type="Script" id=1]
 [ext_resource path="res://Ambiente/Immagini/Immagine.png" type="Texture" id=2]
 [ext_resource path="res://Protagonista/Scena_Protagonista.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Protagonista/Cervello_Protagonista.gd" type="Script" id=4]
-[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Menu/Cervello_GameOverPopup.gd" type="Script" id=6]
-[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Menu/Cervello_WinPopup.gd" type="Script" id=8]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 26.0395, 29.001 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -49,37 +46,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Node2D" index="1" instance=ExtResource( 3 )]
+[node name="KinematicBody2D" parent="Node2D" index="1" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 position = Vector2( 295.303, 387.963 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 4 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
-Cervello_Proiettile = null
 
-[node name="Node" type="Node" parent="Node2D/KinematicBody2D" index="4" instance=ExtResource( 5 )]
+[node name="Node" parent="Node2D/KinematicBody2D" index="4" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
+[node name="CanvasLayer2" parent="Node2D/KinematicBody2D" index="5" instance=ExtResource( 5 )]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="Node2D/KinematicBody2D" index="5" instance=ExtResource( 7 )]
+[node name="Node" parent="." index="1" instance=ExtResource( 4 )]
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 8 )
-
-[node name="Node" parent="." index="1" instance=ExtResource( 5 )]
-
-[node name="CanvasLayer2" parent="." index="2" instance=ExtResource( 7 )]
-
-[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="CanvasLayer2" parent="." index="2" instance=ExtResource( 5 )]
 
 [connection signal="body_entered" from="Node2D/Area2D" to="Node2D/KinematicBody2D" method="_on_Area2D_body_entered"]
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 
 

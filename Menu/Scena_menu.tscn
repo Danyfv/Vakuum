@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Menu/Cervello_menu.gd" type="Script" id=1]
 [ext_resource path="res://logo.png" type="Texture" id=2]
 [ext_resource path="res://Protagonista/Immagini/GattoneVerde.png" type="Texture" id=3]
 [ext_resource path="res://Menu/Immagini/BottoneStart.png" type="Texture" id=4]
 [ext_resource path="res://Menu/Immagini/BottoneExit.png" type="Texture" id=5]
+[ext_resource path="res://Menu/Immagini/Infinite mode.png" type="Texture" id=6]
+[ext_resource path="res://Menu/Immagini/Profilo.png" type="Texture" id=7]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -29,7 +31,7 @@ texture = ExtResource( 2 )
 
 [node name="Gattone" type="Sprite" parent="CanvasLayer" index="1"]
 
-position = Vector2( 183.754, 867.853 )
+position = Vector2( 178.719, 767.152 )
 scale = Vector2( 0.300484, 0.300484 )
 texture = ExtResource( 3 )
 
@@ -39,10 +41,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 51.0
-margin_top = 188.0
-margin_right = 358.0
-margin_bottom = 340.0
+margin_left = 61.0
+margin_top = 218.0
+margin_right = 368.0
+margin_bottom = 370.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -63,10 +65,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 386.0
-margin_top = 999.0
-margin_right = 693.0
-margin_bottom = 1151.0
+margin_left = 345.0
+margin_top = 1026.0
+margin_right = 652.0
+margin_bottom = 1178.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -83,16 +85,14 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="InfiniteMode" type="TextureButton" parent="CanvasLayer" index="4"]
 
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 230.0
-margin_top = 576.0
-margin_right = 537.0
-margin_bottom = 728.0
+margin_left = 293.0
+margin_top = 483.0
+margin_right = 693.0
+margin_bottom = 583.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -104,13 +104,41 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Textures", "Visibility" ]
+
+[node name="Profilo" type="TextureButton" parent="CanvasLayer" index="5"]
+
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 85.0
+margin_top = 849.0
+margin_right = 285.0
+margin_bottom = 949.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 
 [connection signal="button_down" from="CanvasLayer/Start" to="." method="_on_Start_button_down"]
 
 [connection signal="button_down" from="CanvasLayer/Exit" to="." method="_on_Exit_button_down"]
 
 [connection signal="button_down" from="CanvasLayer/InfiniteMode" to="." method="_on_InfiniteMode_button_down"]
+
+[connection signal="button_down" from="CanvasLayer/Profilo" to="." method="_on_TextureButton_button_down"]
 
 

@@ -11,3 +11,7 @@ func _on_Start_button_down():
 
 func _on_InfiniteMode_button_down():
 	get_tree().change_scene("Livelli/Modalita_Infinita/Scena_PrincipaleModalitaInfinita.tscn")
+
+
+func _on_TextureButton_button_down():
+	get_tree().change_scene("Menu/Scena_ProfiloGiocatore.tscn")

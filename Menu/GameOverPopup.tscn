@@ -46,8 +46,14 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="CanvasLayer/Popup" index="1"]
 
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 362.331, 153.893 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Menu" type="TextureButton" parent="CanvasLayer/Popup" index="2"]
 
