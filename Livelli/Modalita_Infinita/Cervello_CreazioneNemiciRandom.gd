@@ -17,7 +17,7 @@ func _bulletSpawn():
 		var cloud_or_bullet = rand_range(0, 10)
 		var enemy
 		
-		if player.alive == false:
+	if player.alive == false:
 			break
 			
 		player.gravity += 5

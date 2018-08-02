@@ -1,16 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Livelli/ScenaBase_Livello.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Livelli/Cervello_Livello1.gd" type="Script" id=1]
 [ext_resource path="res://Ambiente/Proiettile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ambiente/Nuvola.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ambiente/Immagini/Immagine.png" type="Texture" id=4]
+[ext_resource path="res://Protagonista/Scena_Protagonista.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Protagonista/Cervello_Protagonista.gd" type="Script" id=6]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Menu/Cervello_GameOverPopup.gd" type="Script" id=8]
+[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Menu/Cervello_WinPopup.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.0395, 29.001 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
 
-position = Vector2( 3.65643, 0.902344 )
-
-[node name="Bullets" type="Node2D" parent="." index="1"]
+[node name="Bullets" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
 
@@ -20,19 +30,19 @@ position = Vector2( 443.147, 14839.9 )
 
 [node name="RigidBody2D" parent="Bullets" index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 412.431, 10590.7 )
+position = Vector2( 541.761, 10590.7 )
 
 [node name="RigidBody2D12" parent="Bullets" index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 555.147, 13855.1 )
+position = Vector2( 500.485, 13863.5 )
 
 [node name="RigidBody2D17" parent="Bullets" index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 268.277, 7885.16 )
+position = Vector2( 294.089, 7885.16 )
 
 [node name="RigidBody2D2" parent="Bullets" index="4" instance=ExtResource( 2 )]
 
-position = Vector2( 244.625, 11005.5 )
+position = Vector2( 158.405, 10902 )
 
 [node name="RigidBody2D16" parent="Bullets" index="5" instance=ExtResource( 2 )]
 
@@ -40,7 +50,7 @@ position = Vector2( 540.953, 8709.86 )
 
 [node name="RigidBody2D6" parent="Bullets" index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 180.372, 12743 )
+position = Vector2( 264.467, 12743 )
 
 [node name="RigidBody2D3" parent="Bullets" index="7" instance=ExtResource( 2 )]
 
@@ -48,11 +58,11 @@ position = Vector2( 357.456, 9514.66 )
 
 [node name="RigidBody2D4" parent="Bullets" index="8" instance=ExtResource( 2 )]
 
-position = Vector2( 90.962, 11630.9 )
+position = Vector2( 48.164, 11630.9 )
 
 [node name="RigidBody2D11" parent="Bullets" index="9" instance=ExtResource( 2 )]
 
-position = Vector2( 459.795, 9469.26 )
+position = Vector2( 642.835, 9309.1 )
 
 [node name="RigidBody2D14" parent="Bullets" index="10" instance=ExtResource( 2 )]
 
@@ -64,7 +74,7 @@ position = Vector2( 551.581, 4374.31 )
 
 [node name="RigidBody2D7" parent="Bullets" index="12" instance=ExtResource( 2 )]
 
-position = Vector2( 592.474, 12259.8 )
+position = Vector2( 697.375, 12214.9 )
 
 [node name="RigidBody2D10" parent="Bullets" index="13" instance=ExtResource( 2 )]
 
@@ -72,17 +82,17 @@ position = Vector2( 651.099, 7328.86 )
 
 [node name="RigidBody2D8" parent="Bullets" index="14" instance=ExtResource( 2 )]
 
-position = Vector2( 357.719, 11315.9 )
+position = Vector2( 650.867, 11324.5 )
 
 [node name="RigidBody2D9" parent="Bullets" index="15" instance=ExtResource( 2 )]
 
-position = Vector2( 126.657, 7577.36 )
+position = Vector2( 64.7094, 7582.52 )
 
 [node name="RigidBody2D15" parent="Bullets" index="16" instance=ExtResource( 2 )]
 
 position = Vector2( 137.347, 9209.96 )
 
-[node name="Clouds" type="Node2D" parent="." index="2"]
+[node name="Clouds" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
 
@@ -125,5 +135,69 @@ position = Vector2( 525.012, 2312.26 )
 [node name="Nuvola8" parent="Clouds" index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 494.696, 4601.15 )
+
+[node name="Node2D2" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="Area2D" type="Area2D" parent="Node2D2" index="0"]
+
+editor/display_folded = true
+position = Vector2( 324.289, 12979.9 )
+scale = Vector2( 35.5302, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Area2D" index="0"]
+
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node2D2/Area2D" index="1"]
+
+position = Vector2( 1.05483, -6.98145 )
+scale = Vector2( 0.0362614, 0.301991 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Node2D2" index="1" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 295.303, 387.963 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 6 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+Cervello_Proiettile = null
+
+[node name="Node" type="Node" parent="Node2D2/KinematicBody2D" index="4" instance=ExtResource( 7 )]
+
+script = ExtResource( 8 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Node2D2/KinematicBody2D" index="5" instance=ExtResource( 9 )]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 10 )
+
+[connection signal="area_entered" from="Node2D2/Area2D" to="Node2D2/KinematicBody2D" method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="Node2D2/Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_entered" from="Node2D2/Area2D" to="Node2D2/KinematicBody2D" method="_on_Area2D_body_entered"]
 
 
