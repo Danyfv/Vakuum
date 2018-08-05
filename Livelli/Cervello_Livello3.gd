@@ -38,11 +38,13 @@ func _bulletSpawn():
 		if random_object < 10:
 			object = shield.instance()
 			object.name = "shield"
+			boss.anim.play("Shield")
 
 		
 		elif random_object > 10 and random_object < 30:
 			object = paw.instance()
 			object.name = "paw"
+			boss.anim.play("Zampa")
 			
 		else:
 			object = bullet_enemy.instance()

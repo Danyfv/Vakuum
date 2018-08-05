@@ -6,6 +6,11 @@ var velocity = Vector2()
 var speed = 5
 var alive = true
 onready var life_Label = get_node("CanvasLayer/Life")
+onready var anim = get_node("Sprite/AnimationPlayer")
+
+func _ready():
+	anim.play("Hit")
+	
 func _process(delta):
 	print(life)
 	control()
@@ -23,9 +28,11 @@ func control():
 func take_damage():
 	life -= 1
 	life_Label.text = str(life)
+	anim.play("Hit")
 	
 	if life == 0:
 		alive = false 
+		speed = 0
 	 
 	
 
