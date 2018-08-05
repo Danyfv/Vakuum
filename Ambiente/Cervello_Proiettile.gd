@@ -1,5 +1,5 @@
 extends Area2D
-var speed = -400
+var speed = -800
 
 export (PackedScene) var Cervello_Protagonista
 onready var alive = true

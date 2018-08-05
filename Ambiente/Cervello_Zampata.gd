@@ -1,5 +1,5 @@
 extends Area2D
-var speed = -100
+var speed = 300
 var AttackMode = false 
 
 export (PackedScene) var Cervello_Protagonista
@@ -32,6 +32,10 @@ func _on_Zampata_area_entered(area):
 		print("colpitoooooooo")
 		anim.play("Attacco")
 		area.die()
+		die()
+		
+	elif area.get_name() == "Boss" and AttackMode == true:
+		area.take_damage()
 		die()
 
 		

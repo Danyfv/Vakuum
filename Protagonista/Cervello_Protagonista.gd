@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (PackedScene) var Cervello_Proiettile
 
-var gravity = 900
+var gravity = 400
 
 var velocity = Vector2()
 var speed = 800
@@ -33,8 +33,7 @@ func control(delta):
 		
 	elif (get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left")) and position.x > 20:
 		velocity = Vector2(-speed, gravity)
-
-	
+		
 	else:
 		velocity = Vector2(0, gravity)
 	
@@ -71,12 +70,14 @@ func shot():
 	
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "KinematicBody2D":
-		alive = false
-		get_node("CanvasLayer2/Popup").show()
+		win()
 		
 		
 func _on_TextureButton_button_down():
 	get_tree().change_scene("Menu/Scena_menu.tscn")
 
+func win():
+	alive = false
+	get_node("CanvasLayer2/Popup").show()
 
 	
