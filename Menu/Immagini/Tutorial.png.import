@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Zampa.png-b98b81b4b15762f08aa1fa848b5cfeab.stex"
+path="res://.import/Tutorial.png-3623b74f8c59ce1ebb498f5b4e89c4d5.stex"
 
 [deps]
 
-source_file="res://Ambiente/Immagini/Zampa.png"
-dest_files=[ "res://.import/Zampa.png-b98b81b4b15762f08aa1fa848b5cfeab.stex" ]
+source_file="res://Menu/Immagini/Tutorial.png"
+dest_files=[ "res://.import/Tutorial.png-3623b74f8c59ce1ebb498f5b4e89c4d5.stex" ]
 
 [params]
 

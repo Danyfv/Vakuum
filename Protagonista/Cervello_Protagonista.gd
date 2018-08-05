@@ -61,6 +61,14 @@ func more_life():
 		life = 2
 		animation.play("Scudo")
 		
+func shot():
+	if life == 2:
+		animation.play("AttaccoConScudo")
+	
+	else:
+		animation.play("Attacco")
+	
+	
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "KinematicBody2D":
 		alive = false

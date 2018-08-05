@@ -10,8 +10,8 @@ radius = 90.3944
 
 [node name="Area2D" type="Area2D"]
 
-position = Vector2( 176.543, 81.8832 )
-scale = Vector2( 0.36436, 0.36436 )
+position = Vector2( 46.8519, 47.8588 )
+scale = Vector2( 0.559862, 0.559862 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

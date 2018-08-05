@@ -4,6 +4,7 @@ extends Node2D
 var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
 var cloud_enemy = preload("res://Ambiente/Nuvola.tscn")
 var shield = preload("res://Ambiente/Scudo.tscn")
+var paw = preload("res://Ambiente/Zampata.tscn")
 
 onready var  player = get_node("KinematicBody2D")
 var score = 0
@@ -27,12 +28,19 @@ func _bulletSpawn():
 		#Creo un istanza del proiettile e un vettore con la posizione
 		if random_object < 5:
 			object = shield.instance()
+			object.name = "shield"
 		
 		elif random_object > 5 and random_object < 15:
 			object = cloud_enemy.instance()
+			object.name = "cloud_enemy"
+		
+		elif random_object > 15 and random_object < 25:
+			object = paw.instance()
+			object.name = "paw"
 			
 		else:
 			object = bullet_enemy.instance()
+			object.name = "bullet_enemy"
 		
 		var pos = Vector2()
 		pos.x = rand_range(-10, 730)

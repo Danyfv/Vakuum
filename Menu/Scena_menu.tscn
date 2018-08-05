@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Menu/Cervello_menu.gd" type="Script" id=1]
 [ext_resource path="res://logo.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Menu/Immagini/BottoneExit.png" type="Texture" id=5]
 [ext_resource path="res://Menu/Immagini/Infinite mode.png" type="Texture" id=6]
 [ext_resource path="res://Menu/Immagini/Profilo.png" type="Texture" id=7]
+[ext_resource path="res://Menu/Immagini/Tutorial.png" type="Texture" id=8]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -25,13 +26,13 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Logo" type="Sprite" parent="CanvasLayer" index="0"]
 
-position = Vector2( 595.826, 96.8502 )
+position = Vector2( 593.308, 101.885 )
 scale = Vector2( 0.300484, 0.300484 )
 texture = ExtResource( 2 )
 
 [node name="Gattone" type="Sprite" parent="CanvasLayer" index="1"]
 
-position = Vector2( 178.719, 767.152 )
+position = Vector2( 500.002, 730.626 )
 scale = Vector2( 0.300484, 0.300484 )
 texture = ExtResource( 3 )
 
@@ -41,10 +42,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 61.0
-margin_top = 218.0
-margin_right = 368.0
-margin_bottom = 370.0
+margin_left = 48.0
+margin_top = 120.0
+margin_right = 355.0
+margin_bottom = 272.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -65,10 +66,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 345.0
-margin_top = 1026.0
-margin_right = 652.0
-margin_bottom = 1178.0
+margin_left = 219.0
+margin_top = 1087.0
+margin_right = 526.0
+margin_bottom = 1239.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -89,10 +90,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 293.0
-margin_top = 483.0
-margin_right = 693.0
-margin_bottom = 583.0
+margin_left = 115.0
+margin_top = 356.0
+margin_right = 515.0
+margin_bottom = 456.0
+rect_scale = Vector2( 1.2, 1.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -105,7 +107,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 6 )
-_sections_unfolded = [ "Textures", "Visibility" ]
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 
 [node name="Profilo" type="TextureButton" parent="CanvasLayer" index="5"]
 
@@ -115,10 +117,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 85.0
-margin_top = 849.0
-margin_right = 285.0
-margin_bottom = 949.0
+margin_left = 107.0
+margin_top = 685.0
+margin_right = 307.0
+margin_bottom = 785.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -133,6 +135,31 @@ group = null
 texture_normal = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer" index="6"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 295.0
+margin_top = 842.0
+margin_right = 695.0
+margin_bottom = 942.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+_sections_unfolded = [ "Textures", "Visibility" ]
+
 [connection signal="button_down" from="CanvasLayer/Start" to="." method="_on_Start_button_down"]
 
 [connection signal="button_down" from="CanvasLayer/Exit" to="." method="_on_Exit_button_down"]
@@ -140,5 +167,7 @@ _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 [connection signal="button_down" from="CanvasLayer/InfiniteMode" to="." method="_on_InfiniteMode_button_down"]
 
 [connection signal="button_down" from="CanvasLayer/Profilo" to="." method="_on_TextureButton_button_down"]
+
+[connection signal="button_down" from="CanvasLayer/Tutorial" to="." method="_on_Tutorial_button_down"]
 
 
