@@ -7,7 +7,12 @@ var gravity = 900
 var velocity = Vector2()
 var speed = 800
 var alive = true
+var life = 1
 
+onready var animation = get_node("Sprite/AnimationPlayer")
+
+func _ready():
+	animation.play("Normale")
 
 
 func _physics_process(delta):
@@ -41,12 +46,21 @@ func _on_Exit_button_down():
 
 
 func take_damage():
-	if alive:
+	life -= 1
+	
+	if life == 0 and alive:
 		get_node("Node/CanvasLayer/Popup").show()
 		alive = false
 	
+	else:
+		animation.play("NoScudo")
+		print("No scudo")
 
-
+func more_life():
+	if life == 1:
+		life = 2
+		animation.play("Scudo")
+		
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "KinematicBody2D":
 		alive = false
@@ -56,3 +70,5 @@ func _on_Area2D_body_entered(body):
 func _on_TextureButton_button_down():
 	get_tree().change_scene("Menu/Scena_menu.tscn")
 
+
+	

@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 9.22877
 height = 20.0
 
-[node name="Bullet" type="Area2D" index="0"]
+[node name="Bullet" type="Area2D"]
 
 position = Vector2( 285.087, 103.911 )
 input_pickable = false

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GattoneVerde.png-9bca653fd1b4a83b6e913dbf21a96b12.stex"
+path="res://.import/Scudo.png-52d71c48a68cc7002838efb9393770e1.stex"
 
 [deps]
 
-source_file="res://Protagonista/Immagini/GattoneVerde.png"
-dest_files=[ "res://.import/GattoneVerde.png-9bca653fd1b4a83b6e913dbf21a96b12.stex" ]
+source_file="res://Ambiente/Immagini/Scudo.png"
+dest_files=[ "res://.import/Scudo.png-52d71c48a68cc7002838efb9393770e1.stex" ]
 
 [params]
 

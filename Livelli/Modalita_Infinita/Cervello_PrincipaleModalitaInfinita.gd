@@ -31,7 +31,6 @@ func read_savegame():
 	save_data = savegame.get_var() #get the value
 	savegame.open(save_path, File.READ) #open the file
 	save_data = savegame.get_var() #get the value
-	print(save_data)
 	savegame.close() #close the file
 	return save_data["highscore"] #return the value
     
