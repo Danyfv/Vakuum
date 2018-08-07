@@ -2,12 +2,13 @@ extends KinematicBody2D
 
 export (PackedScene) var Cervello_Proiettile
 
-var gravity = 400
+var gravity = 800
 
 var velocity = Vector2()
 var speed = 800
 var alive = true
 var life = 1
+var pos = Vector2(0, 0)
 
 onready var animation = get_node("Sprite/AnimationPlayer")
 
@@ -16,6 +17,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	pos = position
 	if not alive:
 		gravity = 0
 		
@@ -50,6 +52,7 @@ func take_damage():
 	if life == 0 and alive:
 		get_node("Node/CanvasLayer/Popup").show()
 		alive = false
+		animation.play("NoScudo")
 	
 	else:
 		animation.play("NoScudo")

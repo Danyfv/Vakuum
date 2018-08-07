@@ -6,11 +6,12 @@ var save_path = "user://Salvataggio_LivelloCompletato.save" #place of the file
 var save_data = {"Level": 1}
 var Levelcomplete
 
+var plug_enemy = preload("res://Ambiente/Spina.tscn")
 var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
 var shield = preload("res://Ambiente/Scudo.tscn")
 var paw = preload("res://Ambiente/Zampata.tscn")
 
-onready var player = get_node("Node2D/KinematicBody2D")
+onready var player = get_node("KinematicBody2D")
 
 func _ready():
 	_bulletSpawn()
@@ -40,34 +41,51 @@ func read_savegame():
 
 
 func _on_Area2D_body_entered(body):
+	player.win()
 	if body.get_name() == "KinematicBody2D":
-		if Levelcomplete == 2:
-			save(3)
+		if Levelcomplete == 5:
+			save(6)
 
 func _bulletSpawn():
 	while player.alive == true:
 		var random_object = rand_range(0, 100)
 		var object
+		var SpawnTime = 1
 		 
 		randomize()
 		#Creo un istanza del proiettile e un vettore con la posizione
-		if random_object < 5:
+		if random_object <= 15:
 			object = shield.instance()
 			object.name = "shield"
+			SpawnTime = 0.1
 		
-		elif random_object > 5 and random_object < 15:
+		elif random_object > 15 and random_object < 20:
 			object = paw.instance()
 			object.name = "paw"
-			
-		else:
+			SpawnTime = 0.1
+		
+		elif random_object > 20 and random_object < 70:
 			object = bullet_enemy.instance()
 			object.name = "bullet_enemy"
+			SpawnTime = 0.5
 		
+		
+		else:
+			object = plug_enemy.instance()
+			object.name = "plug_enemy"
+			object.PlayerPosition = player.position
+			object.PlayerGravity = player.gravity
+			SpawnTime = 1
+			
 		var pos = Vector2()
-
-		object.position.x = rand_range(10, 710)
-		object.position.y = player.position.y + 2000
-
+	
+		if object.name != "plug_enemy":
+			object.position.x = rand_range(10, 710)
+			object.position.y = player.position.y + 5000
+	
+		else:
+			object.position.x = rand_range(10, 710)
+			object.position.y = player.position.y - 2000
 		
 		#aggiungo il nuovo nemico al container
 		get_node("container").add_child(object)
@@ -75,10 +93,9 @@ func _bulletSpawn():
 		
 		#da il tempo di creazione dei proiettili
 		var pauseTime = Timer.new()
-		pauseTime.set_wait_time(0.5)
+		pauseTime.set_wait_time(SpawnTime)
 		self.add_child(pauseTime)
 		pauseTime.start()
 		yield(pauseTime, "timeout")
 		pauseTime.queue_free()
-
 
