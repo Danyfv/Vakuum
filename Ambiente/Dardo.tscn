@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Ambiente/Cervello_Dardo.gd" type="Script" id=1]
+[ext_resource path="res://Ambiente/Immagini/Spina.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
+
+[node name="Area2D" type="Area2D"]
+
+position = Vector2( 24.7593, 8.18354 )
+scale = Vector2( 0.734778, 0.435141 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+Cervello_Protagonista = null
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+modulate = Color( 1, 0.5625, 0, 1 )
+position = Vector2( -19.6831, -0.0918884 )
+rotation = 1.5708
+scale = Vector2( 0.363609, -0.34153 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -33.3819, 0.457806 )
+rotation = 1.5708
+scale = Vector2( 4.13356, 7.29889 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+
+
