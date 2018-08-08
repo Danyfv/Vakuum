@@ -26,24 +26,36 @@ Cervello_Protagonista = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 7.21055, -0.955662 )
 scale = Vector2( 0.179298, 0.39373 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 7.33549, -18.6831 )
+position = Vector2( 0.124941, -17.7274 )
 scale = Vector2( 1.85869, -8.21372 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Sprite2" type="Sprite" parent="." index="2"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
 
-position = Vector2( 1.36658, 388.769 )
-scale = Vector2( 0.252844, 0.277442 )
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Warning" type="Sprite" parent="CanvasLayer" index="0"]
+
+position = Vector2( 48.605, 137.321 )
+scale = Vector2( 0.478019, 0.524524 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
 

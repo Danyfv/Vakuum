@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Livelli/Cervello_Livello7.gd" type="Script" id=1]
+[ext_resource path="res://Livelli/Cervello_Livello8.gd" type="Script" id=1]
 [ext_resource path="res://Ambiente/Immagini/Immagine.png" type="Texture" id=2]
 [ext_resource path="res://Protagonista/Scena_Protagonista.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Protagonista/Cervello_Protagonista.gd" type="Script" id=4]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/Cervello_GameOverPopup.gd" type="Script" id=6]
+[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Menu/Cervello_WinPopup.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -44,15 +47,30 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 3 )]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="1" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 position = Vector2( 295.303, 387.963 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 4 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
+Cervello_Proiettile = null
 
-[node name="Node" parent="KinematicBody2D" index="4" instance=ExtResource( 4 )]
+[node name="Node" type="Node" parent="KinematicBody2D" index="4" instance=ExtResource( 5 )]
 
-[node name="CanvasLayer2" parent="KinematicBody2D" index="5" instance=ExtResource( 5 )]
+script = ExtResource( 6 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="KinematicBody2D" index="5" instance=ExtResource( 7 )]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 8 )
 
 [node name="container" type="Node2D" parent="." index="2"]
 

@@ -67,7 +67,7 @@ func _bulletSpawn():
 		elif random_object > 20 and random_object < 70:
 			object = bullet_enemy.instance()
 			object.name = "bullet_enemy"
-			SpawnTime = 0.5
+			SpawnTime = 0.4
 		
 		
 		else:
@@ -75,7 +75,7 @@ func _bulletSpawn():
 			object.name = "plug_enemy"
 			object.PlayerPosition = player.position
 			object.PlayerGravity = player.gravity
-			SpawnTime = 1
+			SpawnTime = 0.6
 			
 		var pos = Vector2()
 	

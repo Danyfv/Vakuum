@@ -28,7 +28,7 @@ func _on_Zampata_body_entered(body):
 		
 
 func _on_Zampata_area_entered(area):
-	if area.get_name().begins_with("@bullet_enemy") and AttackMode == true:
+	if (area.get_name().begins_with("@bullet_enemy") or area.get_name().begins_with("@dart_enemy")) and AttackMode == true:
 		print("colpitoooooooo")
 		anim.play("Attacco")
 		area.die()

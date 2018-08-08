@@ -67,10 +67,10 @@ func _bulletSpawn():
 			object = dart_enemy.instance()
 			object.name = "dart_enemy"
 			object.PlayerPosition = player.position
-			SpawnTime = 0.5
+			SpawnTime = 0.2
 
 		object.position.x = rand_range(10, 710)
-		object.position.y = player.position.y + 2000
+		object.position.y = player.position.y + 1400
 		
 		#aggiungo il nuovo nemico al container
 		get_node("container").add_child(object)

@@ -6,9 +6,11 @@ var save_path = "user://Salvataggio_LivelloCompletato.save" #place of the file
 var save_data = {"Level": 1}
 var Levelcomplete
 
+var dart_enemy = preload("res://Ambiente/Dardo.tscn")
 var plug_enemy = preload("res://Ambiente/Spina.tscn")
+var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
 var shield = preload("res://Ambiente/Scudo.tscn")
-#var paw = preload("res://Ambiente/Zampata.tscn")
+var paw = preload("res://Ambiente/Zampata.tscn")
 
 onready var player = get_node("KinematicBody2D")
 
@@ -42,31 +44,46 @@ func read_savegame():
 func _on_Area2D_body_entered(body):
 	player.win()
 	if body.get_name() == "KinematicBody2D":
-		if Levelcomplete == 4:
-			save(5)
+		if Levelcomplete == 8:
+			save(9)
 
 func _bulletSpawn():
 	while player.alive == true:
 		var random_object = rand_range(0, 100)
 		var object
-		var SpawnTime = 0.6
+		var SpawnTime = 1
 		 
 		randomize()
 		#Creo un istanza del proiettile e un vettore con la posizione
-		if random_object < 10:
+		if random_object <= 10:
 			object = shield.instance()
 			object.name = "shield"
 			SpawnTime = 0.1
 		
-		#elif random_object > 5 and random_object < 15:
-			#object = paw.instance()
-			#object.name = "paw"
-			
+		elif random_object > 10 and random_object < 20:
+			object = paw.instance()
+			object.name = "paw"
+			SpawnTime = 0.3
+		
+		elif random_object > 20 and random_object < 60:
+			object = bullet_enemy.instance()
+			object.name = "bullet_enemy"
+			SpawnTime = 0.4
+		
+		elif random_object > 60 and random_object < 95:
+			object = dart_enemy.instance()
+			object.name = "dart_enemy"
+			object.PlayerPosition = player.position
+			SpawnTime = 0.2
+		
 		else:
 			object = plug_enemy.instance()
 			object.name = "plug_enemy"
 			object.PlayerPosition = player.position
 			object.PlayerGravity = player.gravity
+			SpawnTime = 0.6
+			
+		var pos = Vector2()
 	
 		if object.name != "plug_enemy":
 			object.position.x = rand_range(10, 710)
@@ -75,6 +92,8 @@ func _bulletSpawn():
 		else:
 			object.position.x = rand_range(10, 710)
 			object.position.y = player.position.y - 2000
+		
+
 		
 		#aggiungo il nuovo nemico al container
 		get_node("container").add_child(object)
@@ -87,4 +106,3 @@ func _bulletSpawn():
 		pauseTime.start()
 		yield(pauseTime, "timeout")
 		pauseTime.queue_free()
-

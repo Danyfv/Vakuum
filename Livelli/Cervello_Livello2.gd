@@ -75,7 +75,7 @@ func _bulletSpawn():
 		
 		#da il tempo di creazione dei proiettili
 		var pauseTime = Timer.new()
-		pauseTime.set_wait_time(0.5)
+		pauseTime.set_wait_time(0.4)
 		self.add_child(pauseTime)
 		pauseTime.start()
 		yield(pauseTime, "timeout")

@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = -15
+var speed = -1000
 
 export (PackedScene) var Cervello_Protagonista
 onready var alive = true
@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	if alive == true:
-		move_local_x(-speed)
+		move_local_x(-speed * delta)
 		
 	if position.y == 0:
 		die()

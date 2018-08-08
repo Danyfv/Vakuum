@@ -14,17 +14,18 @@ func ready():
 	speed = speed + PlayerGravity
 
 func _process(delta):
-	
 	if Warning_signal == false:
-		get_node("Sprite2").hide()
+		get_node("CanvasLayer/Warning").hide()
 	
 	else:
-		if PlayerPosition.y - position.y < 600 and PlayerPosition.y - position.y > 100:
-			get_node("Sprite2").show()
-	
-		else:
-			get_node("Sprite2").hide()
+		get_node("CanvasLayer/Warning").position.x = position.x
 		
+		if PlayerPosition.y - position.y < 500 and PlayerPosition.y - position.y > 100:
+			get_node("CanvasLayer/Warning").show()
+
+		else:
+			get_node("CanvasLayer/Warning").hide()
+			
 	if alive == true:
 		move_local_y((speed + (PlayerGravity/2)) * delta)
 
