@@ -83,7 +83,6 @@ func _bulletSpawn():
 			object.PlayerGravity = player.gravity
 			SpawnTime = 0.6
 			
-		var pos = Vector2()
 	
 		if object.name != "plug_enemy":
 			object.position.x = rand_range(10, 710)

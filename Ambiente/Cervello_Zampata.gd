@@ -22,7 +22,7 @@ func _process(delta):
 func _on_Zampata_body_entered(body):
 	if body.get_name() == "KinematicBody2D":
 		AttackMode = true
-		speed = -body.gravity - 500
+		speed = -body.gravity - 700
 		body.shot()
 		anim.play("Attacco")
 		

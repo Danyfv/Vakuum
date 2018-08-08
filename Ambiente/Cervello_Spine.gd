@@ -8,7 +8,7 @@ onready var alive = true
 var PlayerPosition = Vector2(0, 0)
 var PopupPosition =  Vector2(0, 0)
 var Warning_signal = true
-
+var BossDamage = false
 
 func ready():
 	speed = speed + PlayerGravity
@@ -46,4 +46,8 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_area_entered(area):
 	if area.get_name().begins_with("@bullet_enemy"):
 		area.die()
+		die()
+	
+	if area.get_name() == "Boss" and BossDamage == true:
+		area.take_damage()
 		die()

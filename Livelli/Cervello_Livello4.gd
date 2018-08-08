@@ -68,14 +68,14 @@ func _bulletSpawn():
 			object.PlayerPosition = player.position
 			object.PlayerGravity = player.gravity
 	
-		if object.name != "plug_enemy":
-			object.position.x = rand_range(10, 710)
-			object.position.y = player.position.y + 5000
-	
-		else:
+		if object.name == "plug_enemy":
 			object.position.x = rand_range(10, 710)
 			object.position.y = player.position.y - 2000
-		
+			
+		else:
+			object.position.x = rand_range(10, 710)
+			object.position.y = player.position.y + 2000
+
 		#aggiungo il nuovo nemico al container
 		get_node("container").add_child(object)
 
