@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Livelli/Cervelli_Livello13/Cervello_Livello13.gd" type="Script" id=1]
+[ext_resource path="res://Livelli/Cervelli_Livello10/Scena_Boss1Giocatore.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nemici/Scena_GattoneVerdeBoss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/GameOverPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/WinPopup.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="container" type="Node2D" parent="." index="0"]
+
+position = Vector2( -1.8248, 1.14131 )
+
+[node name="Boss" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="KinematicBody2D" parent="." index="2" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+position = Vector2( 355.167, 222.318 )
+
+[node name="Node" parent="KinematicBody2D" index="3" instance=ExtResource( 4 )]
+
+[node name="CanvasLayer2" parent="KinematicBody2D" index="4" instance=ExtResource( 5 )]
+
+

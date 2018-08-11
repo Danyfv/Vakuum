@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Livelli/Cervelli_Livello10/Cervello_Boss1Giocatore.gd" type="Script" id=1]
+[ext_resource path="res://Livelli/Cervelli_Livello13/Cervello_Boss1Giocatore.gd" type="Script" id=1]
 [ext_resource path="res://Protagonista/Immagini/ProtagonistaVerde.png" type="Texture" id=2]
 [ext_resource path="res://Protagonista/Immagini/BottoneExit.png" type="Texture" id=3]
 

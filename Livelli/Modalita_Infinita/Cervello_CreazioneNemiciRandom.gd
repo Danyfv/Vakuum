@@ -2,7 +2,7 @@ extends Node2D
 
 #Carica la scena del proiettile
 var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
-var cloud_enemy = preload("res://Ambiente/Nuvola.tscn")
+var cloud = preload("res://Ambiente/Nuvola.tscn")
 var shield = preload("res://Ambiente/Scudo.tscn")
 var paw = preload("res://Ambiente/Zampata.tscn")
 
@@ -31,8 +31,8 @@ func _bulletSpawn():
 			object.name = "shield"
 		
 		elif random_object > 5 and random_object < 15:
-			object = cloud_enemy.instance()
-			object.name = "cloud_enemy"
+			object = cloud.instance()
+			object.name = "cloud"
 		
 		elif random_object > 15 and random_object < 25:
 			object = paw.instance()
