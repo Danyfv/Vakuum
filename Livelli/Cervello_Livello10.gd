@@ -53,12 +53,12 @@ func _bulletSpawn():
 		 
 		randomize()
 		#Creo un istanza del proiettile e un vettore con la posizione
-		if random_object <= 1:
+		if random_object <= 10:
 			object = shield.instance()
 			object.name = "shield"
 			SpawnTime = 0.1
 		
-		elif random_object > 1 and random_object < 20:
+		elif random_object > 10 and random_object < 20:
 			object = paw.instance()
 			object.name = "paw"
 			SpawnTime = 0.3
@@ -66,6 +66,7 @@ func _bulletSpawn():
 		else:
 			object = cloud_enemy.instance()
 			object.name = "cloud_enemy"
+			object.speed = object.speed * rand_range(-1, 1)
 			SpawnTime = 0.6
 
 		object.position.x = rand_range(10, 710)
