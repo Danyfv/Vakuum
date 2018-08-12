@@ -61,7 +61,7 @@ func more_life():
 			animation.play("Scudo")
 		
 func shot():
-	if life == 6:
+	if life == 11:
 		animation.play("AttaccoConScudo")
 	
 	else:

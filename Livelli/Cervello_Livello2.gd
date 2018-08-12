@@ -9,6 +9,7 @@ var Levelcomplete
 var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
 var shield = preload("res://Ambiente/Scudo.tscn")
 var paw = preload("res://Ambiente/Zampata.tscn")
+var cloud = preload("res://Ambiente/Nuvola.tscn")
 
 onready var player = get_node("Node2D/KinematicBody2D")
 
@@ -46,12 +47,15 @@ func _on_Area2D_body_entered(body):
 
 func _bulletSpawn():
 	while player.alive == true:
-		var random_object = rand_range(0, 100)
+		var random_object = rand_range(-5, 100)
 		var object
 		 
 		randomize()
-		#Creo un istanza del proiettile e un vettore con la posizione
-		if random_object < 5:
+		if random_object < 0:
+			object = cloud.instance()
+			object.name = "cloud"
+			
+		elif random_object >= 0 and random_object <= 5 :
 			object = shield.instance()
 			object.name = "shield"
 		
@@ -75,7 +79,7 @@ func _bulletSpawn():
 		
 		#da il tempo di creazione dei proiettili
 		var pauseTime = Timer.new()
-		pauseTime.set_wait_time(0.4)
+		pauseTime.set_wait_time(0.35)
 		self.add_child(pauseTime)
 		pauseTime.start()
 		yield(pauseTime, "timeout")

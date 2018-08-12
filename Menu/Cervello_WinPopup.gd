@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 
 func _on_TextureButton_button_down():

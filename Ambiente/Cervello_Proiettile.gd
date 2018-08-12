@@ -13,7 +13,6 @@ func _process(delta):
 		die()
 
 func _on_Bullet_body_entered(body):
-	
 	if body.get_name() == "KinematicBody2D":
 		body.take_damage()
 	

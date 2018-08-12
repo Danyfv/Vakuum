@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ambiente/Cervello_Nuvola_Pericolosa.gd" type="Script" id=1]
+[ext_resource path="res://Ambiente/Immagini/NuvolaBella.png" type="Texture" id=2]
+
+[node name="Area2D" type="Area2D"]
+
+position = Vector2( 204.912, 421.285 )
+scale = Vector2( 2.32994, 2.32994 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+Cervello_Protagonista = null
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -6.23862, 17.1727 )
+scale = Vector2( 0.184264, 0.188186 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+position = Vector2( -0.340958, 2.21628 )
+build_mode = 0
+polygon = PoolVector2Array( -49.0412, 15.5233, -37.7894, 8.8745, -24.8327, -9.7081, -7.61393, -9.87859, 5.00177, 0.350372, 19.6633, -0.843002, 28.1874, 16.0348, 38.7573, 19.9559, 37.223, 37.1746, -37.7894, 41.6072, -45.9725, 36.6632, -51.428, 24.5589, -49.0412, 15.5233 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+
+

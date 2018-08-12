@@ -81,6 +81,6 @@ func _on_TextureButton_button_down():
 
 func win():
 	alive = false
-	get_node("CanvasLayer2/Popup").show()
+	get_node("CanvasLayer2/CanvasLayer/Popup").show()
 
 	

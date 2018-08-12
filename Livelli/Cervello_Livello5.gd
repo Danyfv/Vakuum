@@ -10,6 +10,7 @@ var plug_enemy = preload("res://Ambiente/Spina.tscn")
 var bullet_enemy = preload("res://Ambiente/Proiettile.tscn")
 var shield = preload("res://Ambiente/Scudo.tscn")
 var paw = preload("res://Ambiente/Zampata.tscn")
+var cloud = preload("res://Ambiente/Nuvola.tscn")
 
 onready var player = get_node("KinematicBody2D")
 
@@ -48,13 +49,17 @@ func _on_Area2D_body_entered(body):
 
 func _bulletSpawn():
 	while player.alive == true:
-		var random_object = rand_range(0, 100)
+		var random_object = rand_range(-5, 100)
 		var object
 		var SpawnTime = 1
 		 
 		randomize()
-		#Creo un istanza del proiettile e un vettore con la posizione
-		if random_object <= 15:
+		if random_object < 0:
+			object = cloud.instance()
+			object.name = "cloud"
+			SpawnTime = 0.1
+			
+		elif random_object >= 0 and random_object <= 15 :
 			object = shield.instance()
 			object.name = "shield"
 			SpawnTime = 0.1
