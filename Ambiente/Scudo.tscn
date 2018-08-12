@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 90.3944
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" index="0"]
 
 position = Vector2( 46.8519, 47.8588 )
 scale = Vector2( 0.559862, 0.559862 )
@@ -24,13 +24,16 @@ Cervello_Protagonista = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.0130615, 0, 0.417969, 1 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true

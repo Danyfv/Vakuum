@@ -27,6 +27,6 @@ window/stretch/shrink="1"
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
-environment/default_clear_color=Color( 0.202179, 0.64987, 0.976563, 1 )
+environment/default_clear_color=Color( 0.139816, 0.481288, 0.730469, 1 )
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=true
