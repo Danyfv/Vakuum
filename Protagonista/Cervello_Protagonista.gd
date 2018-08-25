@@ -9,6 +9,7 @@ var speed = 800
 var alive = true
 var life = 1
 var pos = Vector2(0, 0)
+var moved = false
 
 onready var animation = get_node("Sprite/AnimationPlayer")
 
@@ -29,15 +30,15 @@ func _physics_process(delta):
 
 
 func control(delta):
-
+	var curr_speed = 0
+	
 	if (get_node("CanvasLayer/Right").is_pressed() or Input.is_action_pressed("ui_right")) and position.x < 700:
-		velocity = Vector2(speed, gravity)
+		curr_speed += speed
 		
-	elif (get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left")) and position.x > 20:
-		velocity = Vector2(-speed, gravity)
-		
-	else:
-		velocity = Vector2(0, gravity)
+	if (get_node("CanvasLayer/Left").is_pressed() or Input.is_action_pressed("ui_left")) and position.x > 20:
+		curr_speed -= speed
+	
+	velocity = Vector2(curr_speed, gravity)
 	
 
 
@@ -56,7 +57,6 @@ func take_damage():
 	
 	else:
 		animation.play("NoScudo")
-		print("No scudo")
 
 func more_life():
 	if life == 1:

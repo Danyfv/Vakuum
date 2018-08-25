@@ -16,7 +16,6 @@ func _ready():
 	
 func _process(delta):
 	look_at(PlayerPosition)
-	print(life)
 	control()
 	move_local_y(speed)
 	#move_local_x(speed)

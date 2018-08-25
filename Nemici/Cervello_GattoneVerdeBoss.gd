@@ -52,7 +52,6 @@ func take_damage():
 	
 	else:
 		animation.play("NoScudo")
-		print("No scudo")
 
 func more_life():
 	if life < 6:

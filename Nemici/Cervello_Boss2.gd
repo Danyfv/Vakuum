@@ -12,7 +12,6 @@ func _ready():
 	anim.play("Hit")
 	
 func _process(delta):
-	print(life)
 	control()
 	move_local_x(speed)
 	
