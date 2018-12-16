@@ -27,6 +27,7 @@ window/stretch/shrink="1"
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
-environment/default_clear_color=Color( 0.139816, 0.481288, 0.730469, 1 )
+quality/filters/use_nearest_mipmap_filter=true
+environment/default_clear_color=Color( 0.341125, 0.69268, 0.949219, 1 )
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=true
